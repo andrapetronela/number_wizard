@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>Number Wizard</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
     <main class="container">
-        <h1 id="welcome">Welcome to Number Wizard!</h1>
+        <h1 id="welcome">Welcome, number wizard!</h1>
         <div id="gameWrapper">
-           <h2 id="gameRule">Guess a number between <span id="min"></span> and <span id="max"></span></h2>
-            <input type="number" placeholder="Pick a number" class="userGuess">
-            <input type="submit" id="buttonSubmit" value="Submit">
-            <p class="wizardResponse"></p>
+           <h2 id="gameRule">Let's see if you can guess my number! <br/>It is between <span id="min"></span> and <span id="max"></span>.</h2>
+           <div class="score-container">
+               <i class="fas fa-heartbeat lives"></i>
+               <p id="score"></p>
+           </div>
+           <input type="number" placeholder="Pick a number" class="userGuess">
+           <input type="submit" id="buttonSubmit" value="Submit">
+           <p class="wizardResponse"></p>
         </div>
     </main>
     

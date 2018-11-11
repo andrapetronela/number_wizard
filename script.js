@@ -8,9 +8,11 @@ const min = document.querySelector('#min'),
 
 // Game values
 
+let score = document.querySelector('#score');
 let minNumber = 1,
     maxNumber = 10,
     guessesLeft = 5;
+
 // Assign min and max
 
 min.textContent = minNumber;
@@ -26,7 +28,9 @@ let winningNumber = winningNum(minNumber, maxNumber);
 
 function startGame() {
     let guess = parseInt(userGuess.value);
-
+//    score.className += "fas fa-heartbeat lives";
+    
+    
     // validate user input 
     if (isNaN(guess) || guess < minNumber || guess > maxNumber) {
         wizardResponse.textContent = `Please enter a number between ${minNumber} and ${maxNumber}.`;
@@ -40,13 +44,14 @@ function startGame() {
         won();
     } else {
         guessesLeft -=1;
-        wizardResponse.textContent = `${guess} is not my number. You have ${guessesLeft} guesses left.`
+        wizardResponse.textContent = `${guess} is not my number. Try again.`
         wizardResponse.classList.add('danger');
         if (guessesLeft === 0) {
             gameOver();
         }
     }
     userGuess.value = "";
+    score.textContent = `${guessesLeft}`;
 }
 
 buttonSubmit.addEventListener('click', startGame);
@@ -74,6 +79,9 @@ function gameOver(){
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
+    
+    // lives
+    score.textContent = 'Sorry'
 }
 
 // Play again event listener

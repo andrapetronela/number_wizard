@@ -6,8 +6,9 @@
 
 body {
     font-family: sans-serif;
-    background: #efefef;
+    background: #332d2d;
     font-size: 1.2rem;
+    color: #fff;
 }
 
 .container {
@@ -20,6 +21,7 @@ body {
 #welcome {
     margin: 4rem 0 5rem;
     font-weight: 400;
+    text-transform: uppercase;
     background: -webkit-linear-gradient(107deg, #674172, #913D88, #68C3A3, #913D88, #674172);
     background: linear-gradient(107deg, #674172, #913D88, #68C3A3, #913D88, #674172);
     -webkit-background-clip: text;
@@ -27,7 +29,7 @@ body {
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     background-size: 400%;
-    animation: writing 15s 3 linear;
+    animation: writing 25s infinite linear;
     transition: all 1s;
 }
 
@@ -41,20 +43,27 @@ body {
 }
 
 #gameRule {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-weight: 300;
     font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
 .userGuess {
     height: 2.3rem;
+    width: 10rem;
     padding: .5rem;
     border: 1px solid #dedede;
     border-radius: 4px;
+    color: #674172;
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 ::placeholder {
-    color: #c4c4c7;
+    color: #674172;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 #buttonSubmit {
@@ -62,10 +71,9 @@ body {
     border: none;
     border-radius: 4px;
     padding: .7rem;
-    box-shadow: 2px 2px 1px #b5b2b2; 
     cursor: pointer;
     text-transform: uppercase;
-    background: #96e6a9;
+    background: #1de9b6;
 }
 
 .wizardResponse {
@@ -80,9 +88,27 @@ body {
     color: #119165;
 }
 
+.score-container {
+    position: absolute;
+    top: 13vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.lives {
+    font-size: 1.2rem;
+    color: #f02020;
+    margin-right: 1rem;
+}
+
 @media only screen and (max-width: 700px) {
     .container {
         margin: 1rem auto;
         padding: 5rem;
+    }
+    
+    .score-container {
+        top: 5rem;
     }
 }
