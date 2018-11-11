@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #efefef;
+    font-size: 1.2rem;
+}
+
+.container {
+    display: block;
+    margin: 5rem auto;
+    width: max-content;
+    text-align: center;
+}
+
+#welcome {
+    margin: 4rem 0 5rem;
+    font-weight: 400;
+    background: -webkit-linear-gradient(107deg, #674172, #913D88, #68C3A3, #913D88, #674172);
+    background: linear-gradient(107deg, #674172, #913D88, #68C3A3, #913D88, #674172);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 400%;
+    animation: writing 15s 3 linear;
+    transition: all 1s;
+}
+
+@keyframes writing {
+     0% {
+        background-position: 400%;
+    }
+    100% {
+        background-position: 10%;
+    }
+}
+
+#gameRule {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.userGuess {
+    height: 2.3rem;
+    padding: .5rem;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+}
+
+::placeholder {
+    color: #c4c4c7;
+}
+
+#buttonSubmit {
+    height: 2.3rem;
+    border: none;
+    border-radius: 4px;
+    padding: .7rem;
+    box-shadow: 2px 2px 1px #b5b2b2; 
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #96e6a9;
+}
+
+.wizardResponse {
+    margin: 2rem;
+}
+
+.danger {
+    color: #d33030;
+}
+
+.winner {
+    color: #119165;
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        margin: 1rem auto;
+        padding: 5rem;
+    }
+}
