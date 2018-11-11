@@ -40,7 +40,7 @@ function startGame() {
         won();
     } else {
         guessesLeft -=1;
-        wizardResponse.textContent = `Try again. You have ${guessesLeft} guesses left.`
+        wizardResponse.textContent = `${guess} is not my number. You have ${guessesLeft} guesses left.`
         wizardResponse.classList.add('danger');
         if (guessesLeft === 0) {
             gameOver();
@@ -58,7 +58,7 @@ userGuess.addEventListener('keyup', function(e){
     
     if (e.keyCode === 13 && guess >= minNumber && guess <= maxNumber ) {
         startGame();
-    } if (e.keyCode === 13 && guess == '') {
+    } if (e.keyCode === 13 && guess == '' || e.keyCode === 13 && isNaN(guess) || e.keyCode === 13 && guess < minNumber || e.keyCode === 13 && guess > maxNumber) {
          wizardResponse.textContent = `Please enter a number between ${minNumber} and ${maxNumber}.`;
          wizardResponse.classList.add('danger');
          userGuess.value = '';
