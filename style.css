@@ -126,9 +126,13 @@ body {
 @media screen and (max-width: 700px) {
     body {
         font-size: 2.5vw;
+        overflow-x: hidden;
     }
     .container {
         margin-top: 8vh;
+    }
+    #welcome {
+        margin: 2rem;
     }
     .danger, .winner {
         font-size: 2.9vw;
