@@ -93,9 +93,7 @@ function won() {
     userGuess.disabled = true;
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
-    
-    body.style.background = '#4a4a4f';
-    
+        
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
 }

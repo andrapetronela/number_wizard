@@ -7,8 +7,9 @@
 body {
     font-family: sans-serif;
     background: #2a2a2e;
-    font-size: 1.2rem;
+    font-size: 1.4vw;
     color: #b1b1b3;
+    overflow-x: hidden;
 }
 
 .container {
@@ -45,7 +46,7 @@ body {
 #gameRule {
     margin-bottom: 4rem;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: inherit;
     letter-spacing: 1px;
 }
 
@@ -104,19 +105,18 @@ body {
 
 .danger {
     color: #eb5368;
+    font-size: 1.7vw;
 }
 
 .winner {
     color: #589841;
+    font-size: 1.9vw;
 }
 
 .score-container {
-    position: absolute;
-    top: 13vh;
-    right: 5vw;
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    margin: 1rem 0 3rem;
 }
 .lives {
     font-size: 1.2rem;
@@ -124,13 +124,13 @@ body {
     margin-right: 1rem;
 }
 @media screen and (max-width: 700px) {
-    .container {
-        position: absolute;
-        top: 30vh;
-        transform: translateY(-50%);
+    body {
+        font-size: 2.5vw;
     }
-    
-    .score-container {
-        top: 8rem;
+    .container {
+        margin-top: 15vh;
+    }
+    .danger, .winner {
+        font-size: 2.9vw;
     }
 }
