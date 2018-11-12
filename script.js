@@ -4,8 +4,8 @@ const min = document.querySelector('#min'),
       max = document.querySelector('#max'),
       userGuess = document.querySelector('.userGuess'),
       buttonSubmit = document.querySelector('#buttonSubmit'),
-      wizardResponse = document.querySelector('.wizardResponse');
-
+      wizardResponse = document.querySelector('.wizardResponse'),
+      body = document.querySelector('body');
 // Game values
 
 let score = document.querySelector('#score');
@@ -79,9 +79,6 @@ function gameOver(){
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
-    
-    // lives
-    score.textContent = 'Sorry'
 }
 
 // Play again event listener
@@ -96,6 +93,8 @@ function won() {
     userGuess.disabled = true;
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
+    
+    body.style.background = '#4a4a4f';
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
