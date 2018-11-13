@@ -19,11 +19,14 @@ userGuess.addEventListener('focus', function(){
         gameRule.textContent = 'Remember to breathe!';
         gameRule.style.fontFamily = 'Shadows Into Light Two';
         gameRule.style.color = '#ba000d';
-    }, 500);
+    }, 300);
     
     
     // background
     body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.88)), url(witch-min.jpg)';
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundPosition = 'top center';
+    body.style.backgroundRepeat = 'no-repeat';
 });
     
 
@@ -109,7 +112,7 @@ function gameOver(){
     body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.91)), url(lost-min.jpg)';
     body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat = 'no-repeat';
-    body.style.backgroundPosition = 'center';
+    body.style.backgroundPosition = 'top center';
     
     
     welcome.textContent = 'Now you are the ghost!';
@@ -128,6 +131,12 @@ function won() {
     userGuess.disabled = true;
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
+    
+    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.91)), url(winner.jpg)';
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundPosition = 'top center';
+    body.style.backgroundRepeat = 'no-repeat';
+    
     gameRule.textContent = 'ABRACADABRA!';
     gameRule.style.fontSize = '1.6vw!';
     
