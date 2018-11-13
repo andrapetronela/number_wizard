@@ -24,8 +24,6 @@ userGuess.addEventListener('focus', function(){
     
     // background
     body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.88)), url(witch-min.jpg)';
-    body.style.backgroundSize = 'auto';
-    body.style.backgroundPosition = 'top';
 });
     
 
@@ -50,6 +48,7 @@ let winningNum = (minNumber, maxNumber) => {
 }
 let winningNumber = winningNum(minNumber, maxNumber);
 
+
 function startGame() {
     
     let guess = parseInt(userGuess.value);
@@ -68,8 +67,9 @@ function startGame() {
         won();
     } else {
         guessesLeft -=1;
-        wizardResponse.textContent = `${guess} is not my number. Try again.`
+        wizardResponse.textContent = `'${guess}' is not my number. Try again.`
         wizardResponse.classList.add('danger');
+                
         if (guessesLeft === 0) {
             gameOver();
         }
@@ -98,18 +98,22 @@ userGuess.addEventListener('keyup', function(e){
 function gameOver(){
     // Disable input
     userGuess.disabled = true;
+    userGuess.style.opacity = '0';
+    
     wizardResponse.textContent = `You lost! The correct number was ${winningNumber}.`;
     wizardResponse.classList.add('danger');
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
     
-    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.51)), url(lost-min.jpg)';
-    body.style.backgroundSize = '100%';
+    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.91)), url(lost-min.jpg)';
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundRepeat = 'no-repeat';
     body.style.backgroundPosition = 'center';
     
-    welcome.textContent = 'Now the ghost is you!';
     
+    welcome.textContent = 'Now you are the ghost!';
+    gameRule.textContent = 'It seems that your blood type is not coffee!';
 }
 
 // Play again event listener
@@ -131,4 +135,4 @@ function won() {
     buttonSubmit.className += 'play-again';
 }
 
-
+winningNum.style.fontFamily = 'Eater';

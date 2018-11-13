@@ -7,9 +7,14 @@
 body {
     font-family: 'Shadows Into Light Two';
     background: #2a2a2e;
+    height: 100vh;
+    width: auto;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
     font-size: 1.4vw;
     color: #b1b1b3;
-    overflow-x: hidden;
+    overflow: hidden;
     transition: all .5s;
 }
 
@@ -126,8 +131,9 @@ body {
 }
 @media screen and (max-width: 700px) {
     body {
-        font-size: 2.5vw;
-        overflow-x: hidden;
+        font-size: 2.7vw;
+        background-position: center center;
+        background-attachment: fixed;
     }
     .container {
         margin-top: 8vh;
@@ -136,6 +142,6 @@ body {
         margin: 2rem;
     }
     .danger, .winner {
-        font-size: 2.9vw;
+        font-size: 3.2vw;
     }
 }
