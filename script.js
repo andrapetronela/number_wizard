@@ -5,7 +5,31 @@ const min = document.querySelector('#min'),
       userGuess = document.querySelector('.userGuess'),
       buttonSubmit = document.querySelector('#buttonSubmit'),
       wizardResponse = document.querySelector('.wizardResponse'),
-      body = document.querySelector('body');
+      body = document.querySelector('body'),
+      welcome = document.querySelector('#welcome'),
+      gameRule = document.querySelector('#gameRule');
+
+
+// update UI messages
+userGuess.addEventListener('focus', function(){
+    setTimeout(function() {
+        welcome.textContent = 'May the ghost be with you!';
+        welcome.style.fontFamily = 'Eater';
+        welcome.style.transition = 'all 2s';
+        gameRule.textContent = 'Remember to breathe!';
+        gameRule.style.fontFamily = 'Shadows Into Light Two';
+        gameRule.style.color = '#ba000d';
+    }, 500);
+    
+    
+    // background
+    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.88)), url(witch-min.jpg)';
+    body.style.backgroundSize = 'auto';
+    body.style.backgroundPosition = 'top';
+});
+    
+
+
 // Game values
 
 let score = document.querySelector('#score');
@@ -17,6 +41,7 @@ let minNumber = 1,
 
 min.textContent = minNumber;
 max.textContent = maxNumber;
+score.textContent = `${guessesLeft}`;
 
 // Winning number 
 
@@ -25,10 +50,9 @@ let winningNum = (minNumber, maxNumber) => {
 }
 let winningNumber = winningNum(minNumber, maxNumber);
 
-
 function startGame() {
+    
     let guess = parseInt(userGuess.value);
-//    score.className += "fas fa-heartbeat lives";
     
     
     // validate user input 
@@ -79,6 +103,13 @@ function gameOver(){
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
+    
+    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.51)), url(lost-min.jpg)';
+    body.style.backgroundSize = '100%';
+    body.style.backgroundPosition = 'center';
+    
+    welcome.textContent = 'Now the ghost is you!';
+    
 }
 
 // Play again event listener
@@ -93,7 +124,9 @@ function won() {
     userGuess.disabled = true;
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
-        
+    gameRule.textContent = 'ABRACADABRA!';
+    gameRule.style.fontSize = '1.6vw!';
+    
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
 }

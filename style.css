@@ -5,11 +5,12 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Shadows Into Light Two';
     background: #2a2a2e;
     font-size: 1.4vw;
     color: #b1b1b3;
     overflow-x: hidden;
+    transition: all .5s;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
 }
 
 #welcome {
-    margin: 4rem;
+    margin: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     background: -webkit-linear-gradient(107deg, #674172, #913D88, #68C3A3, #913D88, #674172);
@@ -31,7 +32,7 @@ body {
     text-fill-color: transparent;
     background-size: 400%;
     animation: writing 25s infinite linear;
-    transition: all 1s;
+    transition: all 3s;
 }
 
 @keyframes writing {
@@ -116,7 +117,7 @@ body {
 .score-container {
     display: flex;
     justify-content: center;
-    margin: 1rem 0 3rem;
+    margin: 1rem;
 }
 .lives {
     font-size: 1.2rem;
