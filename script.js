@@ -7,7 +7,8 @@ const min = document.querySelector('#min'),
       wizardResponse = document.querySelector('.wizardResponse'),
       body = document.querySelector('body'),
       welcome = document.querySelector('#welcome'),
-      gameRule = document.querySelector('#gameRule');
+      gameRule = document.querySelector('#gameRule'),
+      ghost = document.querySelector('.ghost');
 
 
 // update UI messages
@@ -16,9 +17,9 @@ userGuess.addEventListener('focus', function(){
         welcome.textContent = 'May the ghost be with you!';
         welcome.style.fontFamily = 'Eater';
         welcome.style.transition = 'all 2s';
-        gameRule.textContent = 'Remember to breathe!';
+        gameRule.textContent = 'It\'s time for a coffin break!';
         gameRule.style.fontFamily = 'Shadows Into Light Two';
-        gameRule.style.color = '#ba000d';
+        //gameRule.style.color = '#ba000d';
     }, 300);
     
     
@@ -27,6 +28,9 @@ userGuess.addEventListener('focus', function(){
     body.style.backgroundSize = 'cover';
     body.style.backgroundPosition = 'top center';
     body.style.backgroundRepeat = 'no-repeat';
+    
+    //ghost 
+    ghost.style.animationPlayState = "running"; 
 });
     
 

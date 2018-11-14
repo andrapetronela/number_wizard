@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Shadows Into Light Two';
-    background: #2a2a2e;
+    background: linear-gradient(#0f0f0f, #2a2a2e);
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -15,6 +15,7 @@ body {
     font-size: 1.4vw;
     color: #b1b1b3;
     overflow: hidden;
+    transition: all .1s;
 }
 
 .container {
@@ -160,6 +161,33 @@ body {
         transform: translate(-50vw, -50%);
         visibility: visible;
     }
+}
+
+.ghost {
+    font-size: 0rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888;
+    animation: appear 1.5s cubic-bezier(.91,-0.52,.74,4.91) 1 alternate;
+    animation-play-state: paused;
+}
+
+@keyframes appear {
+    0% {
+        font-size: 0rem;
+        opacity: 0;
+    }
+    
+    100% {
+        font-size: 7rem;
+        opacity: .8;
+    }
+}
+
+::selection {
+    background-color: #000;
 }
 
 @media only screen and (max-width: 700px) {
