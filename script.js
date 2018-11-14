@@ -23,7 +23,7 @@ userGuess.addEventListener('focus', function(){
     
     
     // background
-    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.88)), url(witch-min.jpg)';
+    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 30vw, rgba(0, 0, 0, 0.58) 70vw, rgba(0, 0, 0, 0.88)), url(witch-min.jpg)';
     body.style.backgroundSize = 'cover';
     body.style.backgroundPosition = 'top center';
     body.style.backgroundRepeat = 'no-repeat';
@@ -109,14 +109,14 @@ function gameOver(){
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
     
-    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.91)), url(lost-min.jpg)';
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundRepeat = 'no-repeat';
-    body.style.backgroundPosition = 'top center';
+    body.style.background = 'linear-gradient(to right bottom, rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.58) 70vw, rgba(0, 0, 0, 0.88)), url(lost-min.jpg)';
+    body.style.backgroundSize = '100% 100vh';
     
     
     welcome.textContent = 'Now you are the ghost!';
     gameRule.textContent = 'It seems that your blood type is not coffee!';
+    gameRule.style.color = '#000000';
+    gameRule.style.fontWeight = '600';
 }
 
 // Play again event listener
@@ -129,19 +129,19 @@ buttonSubmit.addEventListener('mousedown', function(e){
 function won() {
     // Disable input
     userGuess.disabled = true;
+    userGuess.style.opacity = '0';
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
-    
-    body.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 0.91) 50%, rgba(0, 0, 0, 0.91)), url(winner.jpg)';
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundPosition = 'top center';
-    body.style.backgroundRepeat = 'no-repeat';
-    
-    gameRule.textContent = 'ABRACADABRA!';
+    welcome.textContent = 'Abracadabra!'; 
+   
+    gameRule.textContent = '';
     gameRule.style.fontSize = '1.6vw!';
     
     buttonSubmit.value = 'Play Again';
     buttonSubmit.className += 'play-again';
+    
+    body.style.background = 'linear-gradient(#051937, #292a64, #60338a, #a231a6)';
+    let winnerPuppet = document.querySelector('.winnerPuppet');
+    winnerPuppet.style.animationPlayState = "running"; 
 }
 
-winningNum.style.fontFamily = 'Eater';
