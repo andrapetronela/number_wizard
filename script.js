@@ -13,13 +13,13 @@ const min = document.querySelector('#min'),
 
 // update UI messages
 userGuess.addEventListener('focus', function(){
+    
     setTimeout(function() {
         welcome.textContent = 'May the ghost be with you!';
         welcome.style.fontFamily = 'Eater';
         welcome.style.transition = 'all 2s';
-        gameRule.textContent = 'It\'s time for a coffin break!';
-        gameRule.style.fontFamily = 'Shadows Into Light Two';
-        //gameRule.style.color = '#ba000d';
+        gameRule.textContent = 'While you try to guess my number, I will take a coffin break!';
+
     }, 300);
     
     
@@ -133,7 +133,7 @@ buttonSubmit.addEventListener('mousedown', function(e){
 function won() {
     // Disable input
     userGuess.disabled = true;
-    userGuess.style.opacity = '0';
+    userGuess.style.background = '#363639';
     wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
     welcome.textContent = 'Abracadabra!'; 
