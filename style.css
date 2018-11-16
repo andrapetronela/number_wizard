@@ -27,12 +27,10 @@ body {
     transform: translate(-50%, -50%);
     z-index: -500;
     color: #000000;
-    transition: all 3s;
+    transition: all .3s;
 }
 .spider {
     font-size: 1.5em;
-    height: 2.5em;
-    width: 2.5em;
     position: absolute;
     bottom: 5%;
     left: 50%;
@@ -47,8 +45,8 @@ body {
     background: #333;
     display: block;
     position: absolute;
-    top: -99vh;
-    left: 22%;
+    top: -99.4vh;
+    left: 50%;
     opacity: 0;
 }
 
@@ -62,7 +60,7 @@ body {
 }
 
 .spider:hover ~ .cat {
-    color: #fff;
+    transform: translate(-50%, -50%) rotate(-20deg) translateY(-20%);
 }
 
 @keyframes spiderMove {
@@ -231,11 +229,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #888;
-    animation: appear 1.5s cubic-bezier(.91,-0.52,.74,4.91) 1 alternate;
+    animation: ghostAppear 1.5s cubic-bezier(.91,-0.52,.74,4.91) 1 alternate;
     animation-play-state: paused;
 }
 
-@keyframes appear {
+@keyframes ghostAppear {
     0% {
         font-size: 0rem;
         opacity: 0;

@@ -22,7 +22,7 @@ userGuess.addEventListener('focus', function(){
         welcome.textContent = 'May the ghost be with you!';
         welcome.style.fontFamily = 'Eater';
         welcome.style.transition = 'all 2s';
-        gameRule.textContent = 'While you try to guess my number, I will take a coffin break!';
+        gameRule.textContent = 'Time for a coffin break!';
 
     }, 300);
     
@@ -124,8 +124,6 @@ function gameOver(){
     
     welcome.textContent = 'Now you are the ghost!';
     gameRule.textContent = 'It seems that your blood type is not coffee!';
-    gameRule.style.color = '#000000';
-    gameRule.style.fontWeight = '600';
 }
 
 // Play again event listener
@@ -139,11 +137,11 @@ function won() {
     // Disable input
     userGuess.disabled = true;
     userGuess.style.background = '#363639';
-    wizardResponse.textContent = `You won! The correct number is ${winningNumber}.`;
+    wizardResponse.textContent = ''; //`You won! The correct number is ${winningNumber}.`;
     wizardResponse.classList.add('winner');
     welcome.textContent = 'Abracadabra!'; 
    
-    gameRule.textContent = 'That\'s my lucky number!';
+    gameRule.textContent = `Yeeeeey! ${winningNumber} was my number!`;//'Yeeeey!!! That\'s my lucky number!';
     gameRule.style.fontSize = '1.6vw!';
     
     buttonSubmit.value = 'Play Again';
