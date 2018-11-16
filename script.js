@@ -8,11 +8,15 @@ const min = document.querySelector('#min'),
       body = document.querySelector('body'),
       welcome = document.querySelector('#welcome'),
       gameRule = document.querySelector('#gameRule'),
-      ghost = document.querySelector('.ghost');
+      ghost = document.querySelector('.ghost'),
+      cat = document.querySelector('.cat'),
+      spider = document.querySelector('.spider');
 
 
 // update UI messages
 userGuess.addEventListener('focus', function(){
+    cat.style.display = 'none';
+    spider.style.display = 'none';
     
     setTimeout(function() {
         welcome.textContent = 'May the ghost be with you!';
@@ -90,6 +94,7 @@ buttonSubmit.addEventListener('click', startGame);
 // Keyboard interaction
 
 userGuess.addEventListener('keyup', function(e){
+    
     let guess = parseInt(userGuess.value);
     
     if (e.keyCode === 13 && guess >= minNumber && guess <= maxNumber ) {
@@ -105,7 +110,7 @@ userGuess.addEventListener('keyup', function(e){
 function gameOver(){
     // Disable input
     userGuess.disabled = true;
-    userGuess.style.opacity = '0';
+    userGuess.style.background = '#363639';
     
     wizardResponse.textContent = `You lost! The correct number was ${winningNumber}.`;
     wizardResponse.classList.add('danger');
@@ -138,7 +143,7 @@ function won() {
     wizardResponse.classList.add('winner');
     welcome.textContent = 'Abracadabra!'; 
    
-    gameRule.textContent = '';
+    gameRule.textContent = 'That\' my lucky number!';
     gameRule.style.fontSize = '1.6vw!';
     
     buttonSubmit.value = 'Play Again';

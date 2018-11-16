@@ -19,6 +19,63 @@ body {
     transition: all .1s;
 }
 
+.cat {
+    font-size: 10em;
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: -500;
+    color: #000000;
+    transition: all 3s;
+}
+.spider {
+    font-size: 1.5em;
+    height: 2.5em;
+    width: 2.5em;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    color: #000000;
+    transition: all .3s;
+}
+
+.spider::after {
+    content: '';
+    height: 100vh;
+    width: 1px;
+    background: #333;
+    display: block;
+    position: absolute;
+    top: -99vh;
+    left: 22%;
+    opacity: 0;
+}
+
+.spider:hover {
+    animation: spiderMove 15s linear 1 normal;
+    cursor: pointer;
+}
+
+.spider:hover::after {
+    opacity: 1;
+}
+
+.spider:hover ~ .cat {
+    color: #fff;
+}
+
+@keyframes spiderMove {
+    0% {
+        transform: translateY(-0vh);
+    }
+    10% {
+        color: #402e15;
+    }
+    100% {
+        transform: translateY(-1000vh);
+    }
+}
 .container {
     display: block;
     margin: 5rem auto;
