@@ -80,11 +80,11 @@ function startGame() {
         guessesLeft -=1;
         wizardResponse.textContent = `'${guess}' is not my number. Try again.`
         wizardResponse.classList.add('danger');
-                
         if (guessesLeft === 0) {
             gameOver();
         }
     }
+    
     userGuess.value = "";
     score.textContent = `${guessesLeft}`;
 }
@@ -143,7 +143,7 @@ function won() {
     wizardResponse.classList.add('winner');
     welcome.textContent = 'Abracadabra!'; 
    
-    gameRule.textContent = 'That\' my lucky number!';
+    gameRule.textContent = 'That\'s my lucky number!';
     gameRule.style.fontSize = '1.6vw!';
     
     buttonSubmit.value = 'Play Again';
